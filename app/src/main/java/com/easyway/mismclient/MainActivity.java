@@ -113,6 +113,7 @@ public class MainActivity extends BaseActivity {
 
         }
         if (!BaseConstants.IS_RELEASE) {
+            fgOne5.setVisibility(View.VISIBLE);
             fgOne6.setVisibility(View.VISIBLE);
         }
         Ulog.i("权限个数", APP.getUserModel().GetModule().size());
