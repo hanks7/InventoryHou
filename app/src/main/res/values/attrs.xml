@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="AmountView">
+        <!-- 左右2边+-按钮的宽度 -->
+        <attr name="btnWidth" format="dimension" />
+        <!-- 中间TextView的宽度 -->
+        <attr name="tvWidth" format="dimension" />
+        <!--<attr name="tvColor" format="color"/>-->
+        <attr name="tvTextSize" format="dimension" />
+        <attr name="btnTextSize" format="dimension" />
+    </declare-styleable>
+
+
+    <declare-styleable name="search_view">
+        <attr name="pop_text" format="string" />
+        <attr name="search_text" format="string" />
+        <attr name="is_has_back" format="boolean" />
+        <attr name="title" format="string" />
+        <attr name="bar_right_tv" format="string" />
+        <attr name="bar_left_tv" format="string" />
+        <attr name="right_iv" format="reference" />
+        <attr name="is_chengjin" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="EasyRadioGroup">
+        <!--再次点击是否可取消-->
+        <attr name="tab_bg" format="reference" />
+        <attr name="cancelAble" format="boolean" />
+        <attr name="tagOnly" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="input_test_view">
+        <attr name="input_content" format="string" />
+        <attr name="input_title" format="string" />
+        <attr name="input_background" format="reference|color" />
+        <attr name="input_isGone" format="boolean" />
+        <attr name="input_title_size" format="dimension" />
+        <attr name="input_content_size" format="dimension" />
+        <attr name="input_type" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="SlideMode">
+        <attr name="mode">
+            <enum name="forbid" value="0"/>
+            <enum name="right" value="1"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="CircularImageView">
+        <attr name="border" format="boolean"></attr>
+        <attr name="border_width" format="dimension"></attr>
+        <attr name="border_color" format="color"></attr>
+        <attr name="shadow" format="boolean"></attr>
+    </declare-styleable>
+
+    <declare-styleable name="Theme">
+        <attr name="circularImageViewStyle" format="reference"></attr>
+    </declare-styleable>
+</resources>  

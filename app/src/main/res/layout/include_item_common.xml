@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="@layout/activity_picking">
+
+    <View
+        style="@style/dividing_line"
+        android:layout_height="12dp" />
+
+    <RelativeLayout
+        android:id="@+id/ac_check_register_rl_select"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="45dp">
+
+
+        <TextView
+            android:id="@+id/ac_check_register_tv_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/default_margin_small"
+            android:layout_marginStart="@dimen/default_margin_large"
+            android:text="@string/RegistrationCertificate" />
+
+        <TextView
+            android:id="@+id/ac_check_register_tv_num"
+            style="@style/style_tv_content"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/ac_check_register_tv_tag"
+            android:layout_toStartOf="@+id/ac_check_register_iv_close"
+            android:background="@null"
+            android:hint="@string/PleaseSelectTheRegistrationCard"
+            android:singleLine="true"
+            android:textColor="@color/input_color"
+            android:textColorHint="@color/myred" />
+
+        <ImageView
+            android:id="@+id/ac_check_register_iv_close"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:padding="16dp"
+            android:src="@mipmap/ic_pop_sort_arrow_down" />
+
+        <View
+            style="@style/dividing_line"
+            android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+
+    <com.easyway.mismclient.view.MyTextView
+        android:id="@+id/ac_check_edit_ping_ci"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:input_title="@string/ProductName" />
+
+    <com.easyway.mismclient.view.MyTextView
+        android:id="@+id/ac_check_edt_tong_yong_ming"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:input_title="@string/CommonName" />
+
+    <com.easyway.mismclient.view.MyTextView
+        android:id="@+id/ac_check_edt_guige"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:input_title="@string/Specifications" />
+
+    <com.easyway.mismclient.view.MyTextView
+        android:id="@+id/ac_check_edt_xinhao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:input_title="@string/Model" />
+
+    <com.easyway.mismclient.view.MyTextView
+        android:id="@+id/ac_check_edt_factory_of_product"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:input_title="@string/Manufacturer" />
+
+    <View
+        style="@style/dividing_line"
+        android:layout_height="12dp"
+        android:layout_marginTop="12dp" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp"
+        android:stretchColumns="*">
+
+        <TableRow>
+
+            <com.easyway.mismclient.view.MyTextView
+                android:id="@+id/ac_check_edt_date_of_product"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:input_title="@string/DateOfManufacture" />
+
+
+            <com.easyway.mismclient.view.MyTextView
+                android:id="@+id/ac_check_edt_num_of_pi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:input_title="@string/BatchNumber" />
+        </TableRow>
+
+        <View
+            style="@style/dividing_line"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp" />
+
+        <TableRow>
+
+            <com.easyway.mismclient.view.MyTextView
+                android:id="@+id/ac_check_edt_date_of_youxiao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:input_title="@string/EffectiveDate" />
+
+
+            <com.easyway.mismclient.view.MyTextView
+                android:id="@+id/ac_check_edt_num_of_xulie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:input_title="@string/SN" />
+
+        </TableRow>
+
+    </TableLayout>
+
+    <View style="@style/dividing_line" />
+
+    <com.easyway.mismclient.view.MyTextView
+        android:id="@+id/ac_check_edit_inventory_amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:visibility="gone"
+        app:input_title="@string/inventory_amount"
+        app:input_title_size="8sp"
+        tools:visibility="visible" />
+
+    <com.easyway.mismclient.view.ListViewForScrollView
+        android:id="@+id/ac_inventory_lsv"
+        style="@style/list_view_style" />
+</merge>

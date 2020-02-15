@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".ui.login.LoginActivity">
+
+    <com.easyway.mismclient.view.TopBar
+        android:id="@+id/topbar"
+        style="@style/TopBar"
+        android:background="@color/colorPrimary"
+        app:is_has_back="false"
+        app:right_iv="@drawable/ic_router_black_24dp"
+        app:title="登录" />
+
+    <include layout="@layout/login_item_small" />
+
+
+    <!-- 扫描后的显示结果按钮 -->
+
+</RelativeLayout>

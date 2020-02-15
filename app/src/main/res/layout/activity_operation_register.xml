@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.business.OperationRegisterActivity">
+
+    <com.easyway.mismclient.view.TopBar
+        android:id="@+id/topbar"
+        style="@style/TopBar"
+        app:title="@string/operation_register" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/topbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="80dp">
+
+            <com.easyway.mismclient.view.MyEditView
+                android:id="@+id/ac_op_edit_clinic_room_num"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:input_title="诊间号:" />
+
+            <com.easyway.mismclient.view.MyEditView
+                android:id="@+id/ac_op_edit_clinic_patient_num"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:input_title="门诊号:" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:stretchColumns="*">
+
+                <TableRow>
+
+                    <com.easyway.mismclient.view.MyTextView
+                        android:id="@+id/ac_op_edt_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:input_title="姓名：" />
+
+
+                    <com.easyway.mismclient.view.MyTextView
+                        android:id="@+id/ac_op_edt_sex"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:input_title="性别：" />
+
+                </TableRow>
+
+
+                <TableRow>
+
+                    <com.easyway.mismclient.view.MyTextView
+                        android:id="@+id/ac_op_edt_patient_department"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:input_title="病人科室：" />
+
+
+                    <com.easyway.mismclient.view.MyTextView
+                        android:id="@+id/ac_op_edt_edt_patient_bed_num"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:input_title="病位号：" />
+                </TableRow>
+
+                <TableRow>
+
+                    <com.easyway.mismclient.view.MyTextView
+                        android:id="@+id/ac_op_edt_edt_fill_form_person"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:input_title="填表人：" />
+                </TableRow>
+
+                <View
+                    style="@style/dividing_line"
+                    android:layout_marginTop="8dp" />
+
+
+            </TableLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/ac_op_rl_select_executive_department"
+                android:layout_width="match_parent"
+                android:layout_height="45dp">
+
+                <TextView
+                    android:id="@+id/ac_op_tv_executive_department_title"
+                    style="@style/style_tv_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/default_margin_large"
+                    android:layout_marginEnd="@dimen/default_margin_small"
+                    android:text="执行科室  :" />
+
+                <TextView
+                    android:id="@+id/ac_op_tv_select_executive_department"
+                    style="@style/style_tv_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@+id/ac_op_iv_executive_close"
+                    android:layout_toEndOf="@+id/ac_op_tv_executive_department_title"
+                    android:background="@null"
+                    android:hint="@string/PleaseClickTheSelect"
+                    android:singleLine="true"
+                    android:textColor="@color/input_color"
+                    android:textColorHint="@color/myred" />
+
+                <ImageView
+                    android:id="@+id/ac_op_iv_executive_close"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:padding="16dp"
+                    android:src="@mipmap/ic_pop_sort_arrow_down" />
+
+                <View
+                    style="@style/dividing_line"
+                    android:layout_alignParentBottom="true" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp">
+
+                <TextView
+                    android:id="@+id/ac_op_tv_operative_info_title"
+                    style="@style/style_tv_content"
+                    android:text="手术信息 : "
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/ac_op_tv_operative_info_content"
+                    style="@style/style_tv_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="4dp"
+                    android:layout_toEndOf="@+id/ac_op_tv_operative_info_title"
+                    android:gravity="top"
+                    android:lineSpacingExtra="4dp"
+                    android:minLines="2"
+                    android:textColor="@color/input_color"
+                    tools:text="djflksdf" />
+
+            </RelativeLayout>
+
+            <View
+                style="@style/dividing_line"
+                android:layout_height="20dp" />
+
+            <com.easyway.mismclient.view.BarCodeEditView
+                android:id="@+id/ac_op_edit_main"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                app:input_title="条码 ：" />
+
+            <com.easyway.mismclient.view.MyTextView
+                android:id="@+id/ac_op_edit_product_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:input_title="产品名称 ： " />
+
+
+            <com.easyway.mismclient.view.MyTextView
+                android:id="@+id/ac_op_edt_specs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:input_title="@string/Specifications" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="12dp"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/style_tv_content"
+                        android:layout_gravity="center"
+                        android:text="数量 ： " />
+
+                    <com.easyway.mismclient.view.AmountView
+                        android:id="@+id/ac_op_edt_product_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="12dp"
+                        app:btnTextSize="14sp"
+                        app:btnWidth="36dp"
+                        app:tvWidth="50dp" />
+                </LinearLayout>
+
+
+                <com.easyway.mismclient.view.MyTextView
+                    android:id="@+id/ac_op_tv_charge_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_weight="1"
+                    app:input_title="收费价格(元） ：" />
+            </FrameLayout>
+
+            <View
+                style="@style/dividing_line"
+                android:layout_height="20dp" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:stretchColumns="*">
+
+                <TableRow>
+
+                    <com.easyway.mismclient.view.MyTextView
+                        android:id="@+id/ac_op_tv_product_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:input_title="生产日期 ：" />
+
+
+                    <com.easyway.mismclient.view.MyTextView
+                        android:id="@+id/ac_op_tv_effective_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:input_title="有效日期 ：" />
+
+                </TableRow>
+
+
+                <TableRow>
+
+                    <com.easyway.mismclient.view.MyTextView
+                        android:id="@+id/ac_op_tv_batch_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:input_title="批号 ：" />
+
+
+                    <com.easyway.mismclient.view.MyTextView
+                        android:id="@+id/ac_op_tv_serial_num"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:input_title="序列号 ：" />
+                </TableRow>
+
+            </TableLayout>
+
+            <com.easyway.mismclient.view.MyTextView
+                android:id="@+id/ac_op_tv_product_enterprise"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:input_title="生产厂商 ： " />
+
+            <com.easyway.mismclient.view.MyTextView
+                android:id="@+id/ac_op_tv_supply_enterprise"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:input_title="供应商 ： " />
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/style_tv_content"
+                        android:text="本次总量 ： " />
+
+                    <EditText
+                        android:id="@+id/ac_op_tv_this_time_total_num"
+                        style="@style/style_tv_content"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:minWidth="50dp"
+                        android:textColor="@color/black"
+                        tools:text="232323232323232323" />
+                </LinearLayout>
+
+
+                <com.easyway.mismclient.view.MyTextView
+                    android:id="@+id/ac_op_tv_this_time_total_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_weight="1"
+                    app:input_title="合计(元） ：" />
+            </FrameLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+    <Button
+        android:id="@+id/ac_op_btn_commit"
+        style="@style/style_button"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="12dp"
+        android:text="@string/button_ok" />
+
+</RelativeLayout>

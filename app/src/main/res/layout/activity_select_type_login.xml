@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_ologin"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="com.easyway.mismclient.SelectTypeLoginActivity">
+
+    <com.easyway.mismclient.view.TopBar
+        android:id="@+id/topbar"
+        style="@style/TopBar"
+        android:background="@color/colorPrimary"
+        app:is_has_back="false"
+        app:title="离线登陆" />
+
+    <ImageView
+        android:id="@+id/select_iv_banner"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/topbar"
+        android:src="@drawable/login_top_bg" />
+
+    <LinearLayout
+        android:id="@+id/select_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/select_iv_banner"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/select_btn_offline_login"
+            style="@style/style_button"
+            android:layout_marginBottom="22dp"
+            android:layout_marginTop="42dp"
+            android:text="在线" />
+
+        <Button
+            android:id="@+id/select_btn_online_login"
+            style="@style/style_button"
+            android:layout_marginBottom="22dp"
+            android:layout_marginTop="12dp"
+            android:text="离线" />
+    </LinearLayout>
+
+</RelativeLayout>

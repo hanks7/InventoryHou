@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_message"
+    android:layout_width="280dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="horizontal"
+    android:paddingLeft="20dp"
+    android:paddingTop="13dp"
+    android:paddingRight="20dp"
+    android:paddingBottom="13dp"
+    tools:showIn="@layout/item_dialog_photo_options">
+
+    <com.easyway.mismclient.view.GridViewForScrollView
+        android:id="@+id/item_dialog_photo_options_gv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numColumns="3" />
+
+</RelativeLayout>

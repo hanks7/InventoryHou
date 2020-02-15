@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".ui.business.PickingActivity">
+
+    <com.easyway.mismclient.view.TopBar
+        android:id="@+id/ac_check_topbar"
+        style="@style/TopBar"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        app:bar_right_tv="整单确认"
+        app:title="出库" />
+
+
+    <ScrollView
+        android:id="@+id/ac_check_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/ac_check_btnComfirm"
+        android:layout_below="@+id/ac_check_topbar">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/ac_check_rl_select_chuku_keshi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="45dp">
+
+
+                <TextView
+                    android:id="@+id/ac_check_tv_chuku_title"
+                    style="@style/style_tv_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/default_margin_small"
+                    android:layout_marginStart="@dimen/default_margin_large"
+                    android:text="出库科室  :" />
+
+                <TextView
+                    android:id="@+id/ac_check_tv_select_chuku_keshi"
+                    style="@style/style_tv_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/ac_check_tv_chuku_title"
+                    android:layout_toStartOf="@+id/ac_check_iv_chuku_close"
+                    android:background="@null"
+                    android:hint="@string/PleaseClickTheSelect"
+                    android:singleLine="true"
+                    android:textColor="@color/input_color"
+                    android:textColorHint="@color/myred" />
+
+                <ImageView
+                    android:id="@+id/ac_check_iv_chuku_close"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:padding="16dp"
+                    android:src="@mipmap/ic_pop_sort_arrow_down" />
+
+                <View
+                    style="@style/dividing_line"
+                    android:layout_alignParentBottom="true" />
+            </RelativeLayout>
+
+            <com.easyway.mismclient.view.MyEditView
+                android:id="@+id/ac_check_edit_ling_yong_ren"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:input_title="领用人:" />
+
+            <RelativeLayout
+                android:id="@+id/ac_check_rl_select_linyong_keshi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="45dp">
+
+
+                <TextView
+                    android:id="@+id/ac_check_tv_linyong_title"
+                    style="@style/style_tv_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/default_margin_small"
+                    android:layout_marginStart="@dimen/default_margin_large"
+                    android:text="领用科室  :" />
+
+                <TextView
+                    android:id="@+id/ac_check_tv_select_linyong_keshi"
+                    style="@style/style_tv_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/ac_check_tv_linyong_title"
+                    android:layout_toStartOf="@+id/ac_check_iv_linyong_close"
+                    android:background="@null"
+                    android:hint="@string/PleaseClickTheSelect"
+                    android:singleLine="true"
+                    android:textColor="@color/input_color"
+                    android:textColorHint="@color/myred" />
+
+                <ImageView
+                    android:id="@+id/ac_check_iv_linyong_close"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:padding="16dp"
+                    android:src="@mipmap/ic_pop_sort_arrow_down" />
+
+                <View
+                    style="@style/dividing_line"
+                    android:layout_alignParentBottom="true" />
+            </RelativeLayout>
+
+
+
+
+            <include layout="@layout/item_zhuma_cima" />
+
+            <include layout="@layout/include_item_common" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/ac_check_btnComfirm"
+        style="@style/commit_button_style"
+        android:text="添加整单" />
+</RelativeLayout>

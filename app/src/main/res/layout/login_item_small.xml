@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="@layout/activity_login">
+
+
+    <ImageView
+        android:id="@+id/login_iv_banner"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/topbar"
+        android:src="@drawable/login_top_bg" />
+
+    <LinearLayout
+        android:id="@+id/login_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login_iv_banner"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/default_margin"
+                android:text="帐号:" />
+
+            <AutoCompleteTextView
+                android:id="@+id/login_edt_username"
+                style="@style/style_login_input"
+                android:completionThreshold="1"
+                tools:text="@string/app_name" />
+        </LinearLayout>
+
+        <View style="@style/dividing_line" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/default_margin"
+                android:text="密码:" />
+
+            <AutoCompleteTextView
+                android:id="@+id/login_edt_pwd"
+                style="@style/style_login_input"
+                android:completionThreshold="1"
+                android:inputType="textPassword"
+                tools:text="@string/app_name" />
+        </LinearLayout>
+
+        <View style="@style/dividing_line" />
+
+        <CheckBox
+            android:visibility="invisible"
+            android:id="@+id/login_check_box_username"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="12dp"
+            android:colorAccent="@color/colorPrimary"
+            android:color="@color/colorPrimary"
+            android:text="是否离线登录"
+            android:textColor="@color/colorTextPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/userlogin"
+            style="@style/style_button"
+            android:layout_marginBottom="22dp"
+            android:layout_marginTop="42dp"
+            android:text="登  录" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/textView3"
+        style="@style/TextView_12_wrap"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="22dp"
+        android:text="\@上海怡道信息科技有限公司"
+        android:textColor="@color/colorTextHint"
+        android:textSize="8sp" />
+
+    <TextView
+        android:id="@+id/login_tv_version"
+        style="@style/TextView_12_wrap"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="11dp"
+        android:textColor="@color/colorTextHint"
+        android:textSize="8sp"
+        tools:text="版本号:1,版本名称:1.0.0" />
+</merge>

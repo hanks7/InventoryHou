@@ -1,0 +1,45 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:paddingBottom="5dp"
+    android:paddingLeft="5dp"
+    android:paddingTop="5dp" >
+
+    <LinearLayout
+        android:id="@+id/ite_invent_detail_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_gravity="left|center"
+        android:layout_toLeftOf="@+id/ite_invent_detail_amountView"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/ite_invent_detail_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+          
+            android:text="测试测试" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/ite_invent_detail_realtimeamout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="测试测试" >
+        </TextView>
+    </LinearLayout>
+
+    <com.easyway.ui.AmountView
+        android:id="@+id/ite_invent_detail_amountView"
+        android:layout_width="wrap_content"
+        android:layout_height="46dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        app:btnTextSize="14sp"
+        app:btnWidth="36dp"
+        app:tvWidth="50dp" />
+
+</RelativeLayout>

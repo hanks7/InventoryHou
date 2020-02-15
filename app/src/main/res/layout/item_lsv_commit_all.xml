@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="65dp"
+    android:background="@android:color/holo_red_light"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingRight="-90dp"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="65dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        tools:visibility="visible">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/item_list_tv_amount_view"
+                android:orientation="vertical"
+                android:padding="9dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/TextView_16_wrap"
+                        android:text="商品名称 : "
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:id="@+id/item_list_inventory_tv_supplier"
+                        style="@style/TextView_16_wrap"
+                        android:textColor="@color/input_color"
+                        android:textSize="11sp"
+                        tools:text="上海怡道有限公司" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/TextView_16_wrap"
+                        android:text="型         号 : "
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:id="@+id/item_list_real_time_amount"
+                        style="@style/TextView_16_wrap"
+                        android:textColor="@color/input_color"
+                        android:textSize="11sp"
+                        tools:text="112" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <com.easyway.mismclient.view.AmountView
+                android:id="@+id/item_list_tv_amount_view"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="right"
+                android:layout_marginRight="12dp"
+                app:btnTextSize="14sp"
+                app:btnWidth="36dp"
+                app:tvWidth="50dp" />
+
+
+        </RelativeLayout>
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tvDelete"
+        android:layout_width="90dp"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_marginRight="-5dp"
+        android:background="@android:color/holo_red_light"
+        android:gravity="center"
+        android:text="Delete"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+</LinearLayout>

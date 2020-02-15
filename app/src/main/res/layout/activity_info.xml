@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".ui.info.InfoActivity">
+
+    <com.easyway.mismclient.view.TopBar
+        android:id="@+id/ac_check_topbar"
+        style="@style/TopBar"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        app:title="产品信息" />
+
+    <ScrollView
+        android:id="@+id/ac_check_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ac_check_topbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="#ffffff"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp">
+
+                <TextView
+                    android:id="@+id/ac_barcode_scan_lblScanResult1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:text="主码：" />
+
+
+                <com.easyway.mismclient.view.ClearEditText
+                    android:id="@+id/ac_barcode_scan_txtScanResult1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/ac_barcode_scan_btnOK1"
+                    android:layout_toRightOf="@+id/ac_barcode_scan_lblScanResult1"
+                    android:imeOptions="actionDone"
+                    android:selectAllOnFocus="true"
+                    android:singleLine="true"
+                    tools:text="2131231231312321312" />
+
+
+                <Button
+                    android:id="@+id/ac_barcode_scan_btnOK1"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/button2"
+                    android:text="扫码"
+                    android:textColor="#ffffff" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/ac_barcode_scan_rl_search"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="#ffffff"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp">
+
+
+                <com.easyway.mismclient.view.ClearEditText
+                    android:id="@+id/ac_barcode_scan_txtScanResult2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/ac_barcode_scan_btnOK2"
+                    android:hint="请输入关键词"
+                    android:imeOptions="actionDone"
+                    android:selectAllOnFocus="true"
+                    android:singleLine="true" />
+
+
+                <Button
+                    android:id="@+id/ac_barcode_scan_btnOK2"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/button2"
+                    android:text="搜索"
+                    android:textColor="#ffffff" />
+            </RelativeLayout>
+
+            <View
+                style="@style/dividing_line"
+                android:layout_height="1dp" />
+
+
+            <View
+                style="@style/dividing_line"
+                android:layout_height="12dp" />
+
+            <RelativeLayout
+                android:id="@+id/ac_check_register_rl_select"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="45dp">
+
+
+                <TextView
+                    android:id="@+id/ac_check_register_tv_tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/default_margin_large"
+                    android:layout_marginEnd="@dimen/default_margin_small"
+                    android:text="@string/RegistrationCertificate" />
+
+                <TextView
+                    android:id="@+id/ac_check_register_tv_num"
+                    style="@style/style_tv_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@+id/ac_check_register_iv_close"
+                    android:layout_toEndOf="@+id/ac_check_register_tv_tag"
+                    android:background="@null"
+                    android:hint="@string/PleaseSelectTheRegistrationCard"
+                    android:singleLine="true"
+                    android:textColor="@color/input_color"
+                    android:textColorHint="@color/myred" />
+
+                <ImageView
+                    android:id="@+id/ac_check_register_iv_close"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:padding="16dp"
+                    android:src="@mipmap/ic_pop_sort_arrow_down" />
+
+                <View
+                    style="@style/dividing_line"
+                    android:layout_alignParentBottom="true" />
+            </RelativeLayout>
+
+            <com.easyway.mismclient.view.MyTextView
+                android:id="@+id/ac_check_edit_ping_ci"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:input_title="@string/ProductName" />
+
+            <com.easyway.mismclient.view.MyTextView
+                android:id="@+id/ac_check_edt_guige"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:input_title="@string/Specifications" />
+
+            <com.easyway.mismclient.view.MyTextView
+                android:id="@+id/ac_check_edt_factory_of_product"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:input_title="@string/Manufacturer" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:id="@+id/item_input_tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/default_margin_large"
+                    android:layout_marginRight="@dimen/default_margin_small"
+                    android:text="包装规格  :" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:id="@+id/item_input_edt_content"
+                    style="@style/TextView_16_wrap"
+                    android:textColor="@color/input_color"
+                    tools:text="Name" />
+
+            </LinearLayout>
+
+            <View
+                style="@style/dividing_line"
+                android:layout_height="12dp"
+                android:layout_marginTop="12dp" />
+
+            <com.easyway.mismclient.view.ListViewForScrollView
+                android:id="@+id/ac_inventory_lsv"
+                style="@style/list_view_style" />
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

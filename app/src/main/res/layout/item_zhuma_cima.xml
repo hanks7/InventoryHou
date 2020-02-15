@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:showIn="@layout/activity_check">
+
+    <com.easyway.mismclient.view.BarCodeEditView
+        android:id="@+id/ac_check_edit_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:input_title="@string/bar_code" />
+
+</merge>

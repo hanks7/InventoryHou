@@ -1,0 +1,75 @@
+{
+  "MobileInventorybalanceID": 0,
+  "ProductInfoID": 96874,
+  "ProductInfoName": "胆道引流导管",
+  "EnterpriseID": "1592",
+  "EnterpriseName": "库克中国PI/IR/ESC",
+  "GeneralName": "8.5内外引流管",
+  "Specification": "ULT8.5-38-40-P-32S-CLB-RH",
+  "Model": "ULT-8.5(外）",
+  "BarCode": "0100827002094970",
+  "SubBarCode": "17201130108409387",
+  "BarCodeSource": "010082700209497017201130108409387",
+  "SubBarCodeSource": null,
+  "ProductionDate": "2017-12-01",
+  "EffectiveDate": "2020-11-30",
+  "Lot": "8409387",
+  "SN": "",
+  "Amount": 0.0,
+  "UnitName": "套",
+  "State": null,
+  "OperateID": null,
+  "OperateName": null,
+  "DeptCode": null,
+  "Buy": "1",
+  "RegisterNum": "",
+  "LimitDay": 1095,
+  "LimitMonth": 0,
+  "LimitYear": 0,
+  "DetailList": [
+    {
+      "DetailID": 0,
+      "SupplierID": 1601,
+      "SupplierName": "仓库存放单位",
+      "RegistrationCard": null,
+      "RealTimeAmount": 1.0,
+      "FactAmount": 1.0,
+      "InventoryAmount": 0.0
+    },
+    {
+      "DetailID": 0,
+      "SupplierID": 1601,
+      "SupplierName": "可是领用单位",
+      "RegistrationCard": null,
+      "RealTimeAmount": 1.0,
+      "FactAmount": 1.0,
+      "InventoryAmount": 0.0
+    },
+    {
+      "DetailID": 0,
+      "SupplierID": 1601,
+      "SupplierName": "最小计量单位",
+      "RegistrationCard": null,
+      "RealTimeAmount": 1.0,
+      "FactAmount": 1.0,
+      "InventoryAmount": 0.0
+    }
+  ],
+  "LicenceList": [
+    {
+      "StartDate": "2016-05-04",
+      "EndDate": "2021-05-03",
+      "RegistrationCard": "国械注进20162661678(2016-05-04~2021-05-03)"
+    },
+    {
+      "StartDate": "2012-12-27",
+      "EndDate": "2016-12-26",
+      "RegistrationCard": "国食药监械(进)字2012第2664724号(2012-12-27~2016-12-26)"
+    },
+    {
+      "StartDate": "2005-08-31",
+      "EndDate": "2009-08-30",
+      "RegistrationCard": "国食药监械(进)字2005第2662377号(2005-08-31~2009-08-30)"
+    }
+  ]
+}

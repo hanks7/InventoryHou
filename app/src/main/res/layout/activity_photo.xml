@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.info.PhotoActivity">
+
+    <com.easyway.mismclient.view.TopBar
+        android:id="@+id/topbar"
+        style="@style/TopBar"
+        android:layout_alignParentTop="true"
+        app:title="产品信息" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/topbar"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="170dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.easyway.mismclient.view.MyTextView2
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:input_title="长(cm):" />
+
+
+                <com.easyway.mismclient.view.MyTextView2
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:input_title="宽(cm):" />
+
+                <com.easyway.mismclient.view.MyTextView2
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:input_title="高(cm):" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.easyway.mismclient.view.MyTextView2
+                    android:id="@+id/ac_check_edt_date_of_product"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:input_title="净重(kg):"
+                    app:input_type="2" />
+
+                <com.easyway.mismclient.view.MyTextView2
+                    android:id="@+id/ac_check_edt_num_of_pi"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:input_title="毛重(kg):" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.easyway.mismclient.view.MyTextView2
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:input_title="最高\n堆垛层数:" />
+
+
+                <com.easyway.mismclient.view.MyTextView2
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:input_title="内包\n装数量:" />
+
+            </LinearLayout>
+
+            <com.easyway.mismclient.view.MyTextView2
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:input_title="储存条件:" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center|left"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="产品图片 " />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="（照片清晰、完整、不能使用软件编辑）"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+
+            <com.easyway.mismclient.view.GridViewForScrollView
+                android:id="@+id/gv_photo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:clipToPadding="false"
+                android:divider="@color/white"
+                android:horizontalSpacing="6dp"
+                android:numColumns="3"
+                android:paddingLeft="36dp"
+                android:paddingRight="36dp"
+                android:paddingBottom="10dp"
+                android:verticalSpacing="6dp" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/userlogin"
+        style="@style/style_button"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:text="提   交" />
+
+
+</RelativeLayout>

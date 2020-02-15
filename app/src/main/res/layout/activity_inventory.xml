@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".ui.business.InventoryActivity">
+
+    <com.easyway.mismclient.view.TopBar
+        android:id="@+id/ac_check_topbar"
+        style="@style/TopBar"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        app:title="@string/inventory" />
+
+    <ScrollView
+        android:id="@+id/ac_check_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/ac_check_btnComfirm"
+        android:layout_below="@+id/ac_check_topbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/ac_check_rl_select_keshi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="45dp">
+
+
+                <TextView
+                    android:id="@+id/ac_check_tv_title"
+                    style="@style/style_tv_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/default_margin_small"
+                    android:layout_marginStart="@dimen/default_margin_large"
+                    android:text="存放科室  :" />
+
+                <TextView
+                    android:id="@+id/ac_check_tv_select_keshi"
+                    style="@style/style_tv_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/ac_check_tv_title"
+                    android:layout_toStartOf="@+id/ac_check_iv_close"
+                    android:background="@null"
+                    android:hint="@string/PleaseClickTheSelect"
+                    android:singleLine="true"
+                    android:textColor="@color/input_color"
+                    android:textColorHint="@color/myred" />
+
+                <ImageView
+                    android:id="@+id/ac_check_iv_close"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:padding="16dp"
+                    android:src="@mipmap/ic_pop_sort_arrow_down" />
+
+                <View
+                    style="@style/dividing_line"
+                    android:layout_alignParentBottom="true" />
+            </RelativeLayout>
+
+            <include layout="@layout/item_zhuma_cima" />
+
+            <include layout="@layout/include_item_common" />
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/ac_check_btnComfirm"
+        style="@style/commit_button_style"
+        android:onClick="netCommit"
+        android:text="@string/confirm" />
+
+</RelativeLayout>

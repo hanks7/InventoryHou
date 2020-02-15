@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">医院物资管理系统</string>
+
+    <string name="cancel">取消</string>
+    <string name="confirm">确定</string>
+    <string name="setting">设置</string>
+    <string name="permission_note">\ %s权限\未获得,请在系统设置或者安全中心-->\权限设置\中添加相应权限</string>
+
+    <string name="hello_world">Hello world!</string>
+
+    <string name="loading">正在加载中...</string>
+    <string name="inventory">库存盘点</string>
+    <string name="PleaseClickTheSelect">请点击选择</string>
+    <string name="MasterCode">主&#160;&#160;&#160;&#160;&#160;&#160;&#160;码&#160;&#160;:</string>
+    <string name="RegistrationCertificate">注&#160;&#160;册&#160;&#160;证&#160;&#160;:</string>
+    <string name="PleaseSelectTheRegistrationCard">请选择注册证</string>
+    <string name="ProductName">品&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;名&#160;&#160;:</string>
+    <string name="CommonName">通&#160;&#160;用&#160;&#160;名&#160;&#160;:</string>
+    <string name="Specifications">规&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;格&#160;&#160;:</string>
+    <string name="Model">型&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;号&#160;&#160;:</string>
+    <string name="Manufacturer">生产厂商&#160;&#160;:</string>
+    <string name="DateOfManufacture">生产日期&#160;&#160;:</string>
+    <string name="EffectiveDate">有效日期&#160;&#160;:</string>
+    <string name="SN">序列号&#160;&#160;:</string>
+    <string name="BatchNumber">批&#160;&#160;&#160;&#160;号&#160;&#160;:</string>
+    <string name="CheckBeforeAcceptance">验收</string>
+    <string name="no_order">未发现成功提交的订单</string>
+    <string name="check_activity_note">监测到有未提交订单,是否继续?</string>
+    <string name="quit_hint"><![CDATA[你有单据未确认，退出后将<font color=\'#ff0000\'>清空数据</font>，是否退出]]></string>
+
+
+    <string name="primary_code">主码:</string>
+    <string name="bar_code">条码:</string>
+    <string name="second_code">次码:</string>
+    <string name="concatenated_code">组合码:</string>
+    <string name="inventory_amount">盘点数量:</string>
+    <string name="allowance">余量</string>
+    <string name="commit_success">提交成功</string>
+    <string name="isConfirmSubmit">是否确认提交</string>
+    <string name="operation_register">手术登记</string>
+
+
+</resources>

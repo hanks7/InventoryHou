@@ -1,0 +1,235 @@
+<resources>
+
+    <!--
+         Base application theme, dependent on API level. This theme is replaced
+         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+
+
+     -->
+    <!-- Application theme. -->
+    <!-- Base application theme. -->
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:textColorPrimary">@color/input_color</item>
+        <item name="android:textColorSecondary">@color/colorTextHint</item>
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:windowContentOverlay">@color/white</item>
+        <item name="android:divider">@color/c_line</item>
+    </style>
+
+    <style name="TopBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="contentInsetStart">0dp</item><!-- 设置该属性解决空白部分-->
+        <item name="contentInsetEnd">0dp</item><!-- 设置该属性解决空白部分-->
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingRight">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <!-- 条码显示 -->
+    <!-- 条码显示 -->
+    <!-- 产品 -->
+
+    <!-- edittext -->
+    <!-- 产品信息 LinearLayout -->
+    <!-- 间隔 -->
+    <!-- spinner -->
+
+    <style name="list_item">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">13dip</item>
+        <item name="android:textColor">#2e4d4f</item>
+        <item name="android:background">@null</item>
+    </style>
+
+    <style name="style_login_input">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@null</item>
+        <item name="android:padding">@dimen/default_margin</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@color/colorTextPrimary</item>
+        <item name="android:textColorHint">@color/darkgray</item>
+        <item name="android:textCursorDrawable">@drawable/curson</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="style_button" parent="@style/Widget.AppCompat.Button.Borderless">
+        <item name="android:layout_width">290dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:background">@drawable/button</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
+
+    <style name="CustomDialogII" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@drawable/bg</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="loginingDlg" parent="@android:style/Theme.Dialog">
+        <item name="android:windowIsFloating">true</item>
+        <!-- 设置窗口浮动 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- 设置无边框 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 设置无标题 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 设置背景颜色 透明 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 是否模糊 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 半透明 -->
+    </style>
+
+    <style name="list_view_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:clipToPadding">true</item>
+        <item name="android:divider">@color/c_line</item>
+        <item name="android:dividerHeight">1px</item>
+        <item name="android:paddingBottom">50dp</item>
+    </style>
+
+    <style name="commit_button_style">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_alignParentEnd">true</item>
+        <item name="android:layout_alignParentStart">true</item>
+        <item name="android:background">@drawable/selectable_background</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
+
+    <style name="style_slide_menu_relative_layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/selectable_default_white</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:paddingTop">12dp</item>
+    </style>
+
+    <style name="style_iv_icon">
+        <item name="android:layout_width">80dp</item>
+        <item name="android:layout_height">80dp</item>
+        <item name="android:padding">@dimen/default_margin</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="main_ll_home">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:visibility">invisible</item>
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+    </style>
+
+    <!--文字标题样式-->
+    <style name="style_tv_title" parent="base_text_style">
+        <item name="android:textSize">@dimen/tv_title_size</item>
+        <item name="android:textColor">@color/colorTextPrimary</item>
+    </style>
+    <!--文字内容样式-->
+    <style name="style_tv_content" parent="base_text_style">
+        <item name="android:textSize">@dimen/tv_content_size</item>
+        <item name="android:textColor">@color/colorTextPrimary</item>
+    </style>
+    <!--文字标注样式-->
+    <style name="style_tv_tag" parent="style_tv_content">
+        <item name="android:textSize">@dimen/tv_tag_size</item>
+        <item name="android:textColor">@color/colorTextPrimary</item>
+    </style>
+
+
+    <style name="dividing_line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:background">#d8d8d8</item>
+    </style>
+
+    <style name="DialogStyle">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+    </style>
+
+    <style name="LoadingDialogStyle" parent="DialogStyle">
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowCloseOnTouchOutside">false</item>
+    </style>
+
+    <style name="dialog_custom_style" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@drawable/bg</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="base_text_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:drawablePadding">@dimen/middle</item>
+        <item name="android:textCursorDrawable">@drawable/curson</item>
+        <item name="android:textColorHint">@color/divider</item>
+        <item name="android:textColor">@color/colorTextPrimary</item>
+    </style>
+
+
+    <style name="TextView_16_wrap" parent="base_text_style">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextView_12_wrap" parent="base_text_style">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="TextView_13_wrap" parent="base_text_style">
+        <item name="android:textSize">13sp</item>
+    </style>
+
+
+    <style name="Default_ImageView">
+        <item name="android:src">@mipmap/default_bg</item>
+        <item name="android:layout_width">60dp</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <style name="style_head">
+        <item name="android:src">@mipmap/logo</item>
+        <item name="android:layout_width">75dp</item>
+        <item name="android:layout_height">75dp</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <style name="AnimationPreview2">
+        <item name="android:windowEnterAnimation">@anim/menu_fade_in</item>
+        <item name="android:windowExitAnimation">@anim/menu_fade_out</item>
+    </style>
+
+    <!--更改EditText下划线的颜色样式-->
+    <style name="MyEditText" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@color/transparent</item>
+        <item name="colorControlActivated">@color/transparent</item>
+    </style>
+
+</resources>

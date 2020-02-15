@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".ui.business.CommitAllTableActivity">
+
+    <com.easyway.mismclient.view.TopBar
+        android:id="@+id/ac_commit_all_table_topbar"
+        style="@style/TopBar"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        app:title="整单确认" />
+
+    <com.easyway.mismclient.view.ListSlideView
+        android:id="@+id/ac_commit_table_list_slide_view"
+        style="@style/list_view_style"
+        android:layout_below="@+id/ac_commit_all_table_topbar" />
+
+    <Button
+        android:id="@+id/ac_commit_all_table_btnComfirm"
+        style="@style/commit_button_style"
+        android:onClick="clickCommit"
+        android:text="@string/confirm" />
+
+</RelativeLayout>

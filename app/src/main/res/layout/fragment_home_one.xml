@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <com.easyway.mismclient.view.TopBar
+        android:id="@+id/topbar"
+        style="@style/TopBar"
+        app:is_has_back="false"
+        app:title="用户名称" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="*">
+
+        <TableRow>
+
+            <LinearLayout
+                android:id="@+id/fg_one_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selectable_default_white"
+                android:gravity="center"
+                android:orientation="vertical"
+                tools:visibility="visible"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/default_margin"
+                    android:src="@drawable/upload" />
+
+                <TextView
+                    style="@style/TextView_16_wrap"
+                    android:text="PAD盘点"
+                    android:textColor="@color/gray" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/fg_one_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selectable_default_white"
+                android:gravity="center"
+                android:orientation="vertical"
+                tools:visibility="visible"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/default_margin"
+                    android:src="@drawable/scene_comfirm" />
+
+                <TextView
+                    style="@style/TextView_16_wrap"
+                    android:text="PAD验收"
+                    android:textColor="@color/gray" />
+            </LinearLayout>
+
+        </TableRow>
+
+
+
+    </TableLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.easyway.mismclient">
+
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <application
+        android:name=".base.BaseOFFLineApplication"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:theme="@style/AppBaseTheme">
+        <activity android:name=".ui.info.PhotoActivity" />
+        <activity android:name=".ui.info.InfoActivity" />
+
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="43c8544a40e95ad21214c76b9493879d" />
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="5baeda13f1f556a563000072" />
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="Umeng" /> <!-- 欢迎界面 -->
+        <activity
+            android:name=".ui.login.WelcomeActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- 登陆界面 -->
+        <activity android:name=".ui.login.LoginActivity" /> <!-- 测试界面 -->
+        <activity android:name=".ui.offline.InventoryOffActivity" /> <!-- 设置IP端口号界面 -->
+        <activity android:name=".ui.login.ChangeIPActivity" /> <!-- 首页界面 -->
+        <activity
+            android:name=".MainActivity"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!-- 盘点界面 -->
+        <activity
+            android:name=".ui.business.InventoryActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!-- 验收界面 -->
+        <activity
+            android:name=".ui.business.CheckActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!-- 整单确认 -->
+        <activity
+            android:name=".ui.business.CommitAllTableActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".ui.business.CommitAllPickTableActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!-- 领料界面 -->
+        <activity
+            android:name=".ui.business.PickingActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".ui.business.ReturnActivity" />
+        <activity android:name=".ui.offline.login.LoginOffActivity" />
+        <activity
+            android:name=".MainOfflineActivity"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".SelectTypeLoginActivity" />
+        <!--手术登记-->
+        <activity android:name=".ui.business.OperationRegisterActivity" />
+    </application>
+
+</manifest>

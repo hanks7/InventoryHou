@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_ologin"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="com.easyway.mismclient.ui.offline.login.LoginOffActivity">
+
+    <com.easyway.mismclient.view.TopBar
+        android:id="@+id/topbar"
+        style="@style/TopBar"
+        app:is_has_back="false"
+        android:background="@color/colorPrimary"
+        app:bar_left_tv="登录类型"
+        app:title="离线登陆" />
+
+    <include layout="@layout/login_item_small" />
+
+</RelativeLayout>

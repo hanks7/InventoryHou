@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#9000"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/pop_rl_select_keshi"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/pop_tv_title"
+            style="@style/style_tv_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/default_margin_small"
+            android:layout_marginStart="@dimen/default_margin_large"
+            android:text="存放科室  :" />
+
+        <EditText
+            android:id="@+id/pop_tv_select_keshi"
+            style="@style/style_tv_content"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/pop_tv_title"
+            android:background="@null"
+            android:hint="@string/PleaseClickTheSelect"
+            android:singleLine="true"
+            android:textColor="@color/input_color"
+            android:textColorHint="@color/myred" />
+
+
+        <View
+            style="@style/dividing_line"
+            android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/pop_lsv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@color/c_line"
+        android:dividerHeight="1px" />
+
+</LinearLayout>
