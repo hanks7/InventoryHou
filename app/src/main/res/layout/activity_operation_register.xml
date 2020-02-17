@@ -155,7 +155,7 @@
                     android:lineSpacingExtra="4dp"
                     android:minLines="2"
                     android:textColor="@color/input_color"
-                    tools:text="djflksdf" />
+                    tools:text=" " />
 
             </RelativeLayout>
 

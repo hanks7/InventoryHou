@@ -84,8 +84,9 @@ public class MInventoryBean extends BaseModel {
     }
 
     public String getProductInfoName() {
-
-        if (getBuy().equals("-1")) {
+        if (getBuy() == null) {
+            return ProductInfoName + "(未定义)";
+        } else if (getBuy().equals("-1")) {
             return ProductInfoName;
         } else if (getBuy().equals("0")) {
             return ProductInfoName + "(自购)";

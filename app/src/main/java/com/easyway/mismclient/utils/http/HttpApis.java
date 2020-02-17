@@ -8,6 +8,7 @@ import com.easyway.mismclient.model.MInventoryBean;
 import com.easyway.mismclient.model.MProdEnterBean;
 import com.easyway.mismclient.model.MProdEnterDetailBean;
 import com.easyway.mismclient.model.MProdEnterResultBean;
+import com.easyway.mismclient.model.MWareHouseBean;
 import com.easyway.mismclient.model.UpdateBean;
 import com.easyway.mismclient.model.UserBean;
 
@@ -31,7 +32,7 @@ public interface HttpApis {
      * @param HRCode   账号
      * @param Password 密码
      * @param HosID    医院id
-     * @param Version 版本号
+     * @param Version  版本号
      * @return
      */
     @FormUrlEncoded
@@ -219,5 +220,15 @@ public interface HttpApis {
     Call<MProdEnterResultBean> MDepartmentCollarBack(
             @Field("JsonStr") String JsonStr,
             @Field("type") int type
+    );
+
+    /**
+     * 入库单信息获取
+     * @param InstoreCode
+     * @return
+     */
+    @GET("/api/MWareHouse")
+    Call<MWareHouseBean> MWareHouse(
+            @Query("InstoreCode") String InstoreCode
     );
 }

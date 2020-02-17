@@ -208,6 +208,31 @@
             <View style="@style/dividing_line" />
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/fg_one_7"
+            style="@style/main_ll_home"
+            tools:visibility="visible">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center|left"
+                android:orientation="horizontal">
+
+                <ImageView
+                    style="@style/style_iv_icon"
+                    android:src="@mipmap/icon_main_huanku" />
+
+                <TextView
+                    style="@style/style_tv_content"
+                    android:text="@string/push_manage"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <View style="@style/dividing_line" />
+        </LinearLayout>
+
 
     </LinearLayout>
 </ScrollView>

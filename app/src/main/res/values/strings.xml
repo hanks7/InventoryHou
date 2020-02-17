@@ -40,6 +40,7 @@
     <string name="commit_success">提交成功</string>
     <string name="isConfirmSubmit">是否确认提交</string>
     <string name="operation_register">手术登记</string>
+    <string name="push_manage">入库管理</string>
 
 
 </resources>

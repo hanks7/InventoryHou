@@ -15,6 +15,7 @@ import com.easyway.mismclient.ui.business.CheckActivity;
 import com.easyway.mismclient.ui.business.InventoryActivity;
 import com.easyway.mismclient.ui.business.OperationRegisterActivity;
 import com.easyway.mismclient.ui.business.PickingActivity;
+import com.easyway.mismclient.ui.business.PushManageActivity;
 import com.easyway.mismclient.ui.business.ReturnActivity;
 import com.easyway.mismclient.ui.info.InfoActivity;
 import com.easyway.mismclient.ui.login.LoginActivity;
@@ -67,6 +68,8 @@ public class MainActivity extends BaseActivity {
     View fgOne5;
     @BindView(R.id.fg_one_6)
     View fgOne6;
+    @BindView(R.id.fg_one_7)
+    View fgOne7;
 
     @BindView(R.id.main_drawer_layout)
     DrawerLayout mDrawerLayout;//侧滑布局
@@ -109,13 +112,16 @@ public class MainActivity extends BaseActivity {
                 case "caiji"://
                     fgOne5.setVisibility(View.VISIBLE);
                     break;
+                case "rukuguanli"://
+                    fgOne7.setVisibility(View.VISIBLE);
+                    break;
             }
 
         }
-        if (!BaseConstants.IS_RELEASE) {
-            fgOne5.setVisibility(View.VISIBLE);
-            fgOne6.setVisibility(View.VISIBLE);
-        }
+//        if (!BaseConstants.IS_RELEASE) {
+//            fgOne5.setVisibility(View.VISIBLE);
+//            fgOne6.setVisibility(View.VISIBLE);
+//        }
         Ulog.i("权限个数", APP.getUserModel().GetModule().size());
         tvEmptyNote.setVisibility(APP.getUserModel().GetModule().size() == 0 ? View.VISIBLE : View.GONE);
         topbar.setTitle(APP.getUserModel().getEmployeeName());
@@ -140,7 +146,8 @@ public class MainActivity extends BaseActivity {
             R.id.fg_one_3,
             R.id.fg_one_4,
             R.id.fg_one_5,
-            R.id.fg_one_6
+            R.id.fg_one_6,
+            R.id.fg_one_7
 
     })
     public void onViewClicked(View view) {
@@ -169,6 +176,9 @@ public class MainActivity extends BaseActivity {
                 break;
             case R.id.fg_one_6:
                 Uintent.intentDIY(this, OperationRegisterActivity.class);
+                break;
+            case R.id.fg_one_7:
+                Uintent.intentDIY(this, PushManageActivity.class);
                 break;
             case R.id.fg_mine_ll_detail:
                 break;
