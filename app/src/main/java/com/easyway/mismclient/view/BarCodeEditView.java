@@ -1,11 +1,8 @@
 package com.easyway.mismclient.view;
 
-import android.app.Activity;
 import android.app.Service;
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.media.AudioManager;
-import android.media.SoundPool;
 import android.os.Vibrator;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -25,7 +22,6 @@ import com.easyway.mismclient.utils.UProperTies;
 import com.easyway.mismclient.utils.UToast;
 import com.easyway.mismclient.utils.Ulog;
 import com.easyway.mismclient.view.interf.BarCodeCallBackListener;
-import com.google.zxing.common.BeepManager;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -47,18 +43,14 @@ public class BarCodeEditView extends LinearLayout {
      * 声明一个振动器对象
      */
     private Vibrator mVibrator;
-    /**
-     * 音源
-     */
-    int soundId;
-    /**
-     * 声音池
-     */
-    SoundPool sp;
-    /**
-     * 声音震动管理器。如果扫描成功后可以播放一段音频，也可以震动提醒，可以通过配置来决定扫描成功后的行为。
-     */
-    private BeepManager beepManager;
+//    /**
+//     * 音源
+//     */
+//    int soundId;
+//    /**
+//     * 声音池
+//     */
+//    SoundPool sp;
 
     @BindView(R.id.item_input_iv_close)
     ImageView ivClose;
@@ -139,13 +131,11 @@ public class BarCodeEditView extends LinearLayout {
         edtContent.setText(mContent);
 
         //添加提示声音
-        sp = new SoundPool(5, AudioManager.STREAM_MUSIC, 0);
-        soundId = sp.load(context, R.raw.beep, 1);
+//        sp = new SoundPool(5, AudioManager.STREAM_MUSIC, 0);
+//        soundId = sp.load(context, R.raw.beep, 1);
 
         //添加震动
         mVibrator = (Vibrator) getContext().getSystemService(Service.VIBRATOR_SERVICE);
-        beepManager = new BeepManager((Activity) getContext());
-        beepManager.updatePrefs();
     }
 
 
@@ -153,7 +143,7 @@ public class BarCodeEditView extends LinearLayout {
      * 设置震动提示音
      */
     private void playVoiceAndVibrator() {
-        sp.play(soundId, 1, 1, 0, 0, 1);//播放声音
+//        sp.play(soundId, 1, 1, 0, 0, 1);//播放声音
         mVibrator.vibrate(MILLISECONDS);//震动
     }
 

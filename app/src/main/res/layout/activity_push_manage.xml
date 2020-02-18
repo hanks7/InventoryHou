@@ -9,22 +9,64 @@
     tools:context=".ui.business.PushManageActivity">
 
     <com.easyway.mismclient.view.TopBar
-        android:id="@+id/ac_check_topbar"
+        android:id="@+id/ac_push_manage_topbar"
         style="@style/TopBar"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
         app:title="@string/push_manage" />
 
-    <Button
-        android:onClick="test"
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ac_check_topbar"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="135dp"
-        android:layout_marginTop="115dp"
-        android:text="Button" />
+    <ScrollView
+        android:id="@+id/ac_push_manage_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ac_push_manage_topbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+
+            <com.easyway.mismclient.view.MyEditView
+                android:id="@+id/ac_push_manage_edit_main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:input_title="单据号:" />
+
+            <com.easyway.mismclient.view.MyTextView
+                android:id="@+id/ac_push_manage_edit_zhi_dan_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:input_title="制单日期:" />
+
+
+            <com.easyway.mismclient.view.MyTextView
+                android:id="@+id/ac_push_manage_edt_gong_ying_shang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:input_title="供应商" />
+
+            <com.easyway.mismclient.view.MyTextView
+                android:id="@+id/ac_push_manage_edt_ru_ku_ku_fang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:input_title="入库库房:" />
+
+            <View
+                style="@style/dividing_line"
+                android:layout_height="12dp"
+                android:layout_marginTop="12dp" />
+
+            <View style="@style/dividing_line" />
+
+            <com.easyway.mismclient.view.ListViewForScrollView
+                android:id="@+id/ac_push_manage_lsv"
+                style="@style/list_view_style" />
+        </LinearLayout>
+
+    </ScrollView>
 
 </RelativeLayout>

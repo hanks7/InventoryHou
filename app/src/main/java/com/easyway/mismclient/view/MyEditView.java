@@ -1,11 +1,8 @@
 package com.easyway.mismclient.view;
 
-import android.app.Activity;
 import android.app.Service;
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.media.AudioManager;
-import android.media.SoundPool;
 import android.os.Vibrator;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -21,12 +18,13 @@ import android.widget.TextView;
 
 import com.easyway.mismclient.R;
 import com.easyway.mismclient.utils.UToast;
+import com.easyway.mismclient.utils.Ulog;
 import com.easyway.mismclient.view.interf.BarCodeCallBackListener;
-import com.google.zxing.common.BeepManager;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+import static com.easyway.mismclient.base.BaseConstants.IS_RELEASE;
 import static com.easyway.mismclient.base.BaseConstants.MILLISECONDS;
 
 /**
@@ -38,23 +36,6 @@ public class MyEditView extends LinearLayout {
 
     private final float mContentSize;
     private final float mTitleSize;
-
-    /**
-     * 声明一个振动器对象
-     */
-    private Vibrator mVibrator;
-    /**
-     * 音源
-     */
-    int soundId;
-    /**
-     * 声音池
-     */
-    SoundPool sp;
-    /**
-     * 声音震动管理器。如果扫描成功后可以播放一段音频，也可以震动提醒，可以通过配置来决定扫描成功后的行为。
-     */
-    private BeepManager beepManager;
 
     @BindView(R.id.item_input_iv_close)
     ImageView ivClose;
@@ -92,24 +73,41 @@ public class MyEditView extends LinearLayout {
 
         tvTitleName.setText(mTitle);
         edtContent.setText(mContent);
+        setSoundVibrator(context);
 
+
+    }
+
+    /**
+     * 声明一个振动器对象
+     */
+    private Vibrator mVibrator;
+    /**
+     * 音源
+     */
+//    int soundId;
+    /**
+     * 声音池
+     */
+//    SoundPool sp;
+    /**
+     * 初始化振动和提示音
+     * @param context
+     */
+    private void setSoundVibrator(Context context) {
         //添加提示声音
-        sp = new SoundPool(5, AudioManager.STREAM_MUSIC, 0);
-        soundId = sp.load(context, R.raw.beep, 1);
+//        sp = new SoundPool(5, AudioManager.STREAM_MUSIC, 0);
+//        soundId = sp.load(context, R.raw.beep, 1);
 
         //添加震动
         mVibrator = (Vibrator) getContext().getSystemService(Service.VIBRATOR_SERVICE);
-        beepManager = new BeepManager((Activity) getContext());
-        beepManager.updatePrefs();
-
-
     }
 
     /**
      * 设置震动提示音
      */
     private void playVoiceAndVibrator() {
-        sp.play(soundId, 1, 1, 0, 0, 1);//播放声音
+//        sp.play(soundId, 1, 1, 0, 0, 1);//播放声音
         mVibrator.vibrate(MILLISECONDS);//震动
     }
 
@@ -131,12 +129,14 @@ public class MyEditView extends LinearLayout {
             @Override
             public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
                 if (listener == null) return false;
-                playVoiceAndVibrator();//设置震动提示音
+                playVoiceAndVibrator();//设置震动
                 if (TextUtils.isEmpty(textView.getText().toString())) {
                     UToast.showText("输入不能为空");
                     return false;
                 }
+                test(textView);
                 if (i == 5 || i == 0 || i == 6) {
+                    Ulog.i("MyEditView","setOnEditorActionListener");
                     listener.barCodeType(i);
 
                 }
@@ -197,6 +197,45 @@ public class MyEditView extends LinearLayout {
         this.listener = listener;
         initListener();
     }
+    /**
+     * 测试上线后关闭
+     *
+     * @param tv
+     */
+    private void test(TextView tv) {
 
+        if (IS_RELEASE) return;
+
+        String strTest = null;
+        switch (tv.getText().toString()) {
+            case "1":
+                strTest = "QTRK201810230003";
+                break;
+            case "2":
+                break;
+            case "3":
+                break;
+            case "4":
+                break;
+            case "5":
+                break;
+            case "6":
+                break;
+            case "7":
+                break;
+            case "8":
+                break;
+            case "9":
+                break;
+            default:
+                strTest = tv.getText().toString();
+                edtContent.setText(strTest);
+        }
+        if (strTest == null) {
+            edtContent.setText("");
+        } else {
+            edtContent.setText(strTest);
+        }
+    }
 
 }
