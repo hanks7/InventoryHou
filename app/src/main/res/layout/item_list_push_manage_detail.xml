@@ -1,0 +1,67 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/button2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentStart="true"
+    android:layout_centerVertical="true"
+    android:background="@color/white"
+    android:gravity="center|left"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center|left"
+        android:orientation="horizontal"
+        android:padding="3dp">
+
+        <TextView
+            style="@style/TextView_16_wrap"
+            android:text="包装单位 : " />
+
+        <TextView
+            style="@style/TextView_16_wrap"
+            android:textColor="@color/input_color"
+            tools:text="上海怡道有限公司" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center|left"
+        android:orientation="horizontal"
+        android:padding="3dp">
+
+        <TextView
+            style="@style/TextView_16_wrap"
+            android:text="包装单位 : " />
+
+        <TextView
+            style="@style/TextView_16_wrap"
+            android:textColor="@color/input_color"
+            tools:text="上海怡道有限公司" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center|left"
+        android:orientation="horizontal"
+        android:padding="3dp">
+
+        <TextView
+            style="@style/TextView_16_wrap"
+            android:text="包装单位 : " />
+
+        <TextView
+            android:id="@+id/item_list_inventory_tv_supplier"
+            style="@style/TextView_16_wrap"
+            android:textColor="@color/input_color"
+            tools:text="上海怡道有限公司" />
+    </LinearLayout>
+
+
+</LinearLayout>
+
+

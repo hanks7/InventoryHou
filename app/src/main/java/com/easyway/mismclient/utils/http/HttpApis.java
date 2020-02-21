@@ -12,11 +12,17 @@ import com.easyway.mismclient.model.MWareHouseBean;
 import com.easyway.mismclient.model.UpdateBean;
 import com.easyway.mismclient.model.UserBean;
 
+import java.util.List;
+
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Multipart;
 import retrofit2.http.POST;
+import retrofit2.http.Part;
 import retrofit2.http.Query;
 
 /**
@@ -224,6 +230,7 @@ public interface HttpApis {
 
     /**
      * 入库单信息获取
+     *
      * @param InstoreCode
      * @return
      */
@@ -231,4 +238,31 @@ public interface HttpApis {
     Call<MWareHouseBean> MWareHouse(
             @Query("InstoreCode") String InstoreCode
     );
+
+    /**
+     * 图片上传
+     * @param body
+     * @param parts
+     * @return
+     */
+    @Multipart
+    @POST("/MWareHouse")
+    Call<BaseModel> upLoadImg(
+            @Part("description") RequestBody body,
+            @Part() List<MultipartBody.Part> parts
+    );
+
+    @Multipart
+    @POST("/MWareHouse")
+    Call<BaseModel> upload(@Part("description") RequestBody description,
+                           @Part  MultipartBody.Part part);
+    @Multipart
+    @POST("/MWareHouse")
+    Call<BaseModel> upload(@Part("description") RequestBody description,
+                           @Part("file") List<MultipartBody.Part> parts);
+
+    @Multipart
+    @POST("users/image")
+    Call<BaseModel> uploadFilesWithParts(@Part() List<MultipartBody.Part> parts);
+
 }

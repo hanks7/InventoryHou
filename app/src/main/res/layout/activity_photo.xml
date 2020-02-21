@@ -137,7 +137,7 @@
     </ScrollView>
 
     <Button
-        android:id="@+id/userlogin"
+        android:onClick="btnClickUpload"
         style="@style/style_button"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"

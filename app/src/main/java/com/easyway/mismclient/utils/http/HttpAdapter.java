@@ -1,15 +1,20 @@
 package com.easyway.mismclient.utils.http;
 
 
+import android.support.annotation.NonNull;
+
 import com.easyway.mismclient.utils.UToast;
 import com.easyway.mismclient.utils.Ulog;
 import com.easyway.mismclient.utils.http.gson.GsonConverterFactory;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.HttpUrl;
 import okhttp3.Interceptor;
+import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
@@ -36,6 +41,9 @@ public class HttpAdapter {
 
     public static void init() {
         try {
+
+            Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create();
+            GsonConverterFactory gsonConverterFactory = GsonConverterFactory.create(gson);
             client = client.newBuilder()
                     .addNetworkInterceptor(new HttpInterceptor())
                     .addInterceptor(new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
@@ -46,7 +54,7 @@ public class HttpAdapter {
                     .build();
             Retrofit retrofit = new Retrofit.Builder()
                     .baseUrl(FORMAL_URL)
-                    .addConverterFactory(GsonConverterFactory.create())
+                    .addConverterFactory(gsonConverterFactory)
                     .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                     .client(client)
                     .build();
@@ -101,6 +109,11 @@ public class HttpAdapter {
         } catch (final IOException e) {
             return "did not work";
         }
+    }
+
+    @NonNull
+    public static RequestBody getRequestBody(String str) {
+        return RequestBody.create(MediaType.parse("application/json; charset=utf-8"), str);
     }
 
 }

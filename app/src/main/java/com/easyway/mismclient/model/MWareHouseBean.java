@@ -5,6 +5,42 @@ import com.easyway.mismclient.base.BaseModel;
 
 import java.util.List;
 
+/**
+ * "Checkes": null,
+ *     "InStoreNo": "201810230003",
+ *     "InStoreCode": "QTRK201810230003",
+ *     "DeptCode": "220004",
+ *     "SupplierID": 2615,
+ *     "PurchaseOrderID": "201810230007",
+ *     "Source": "1",
+ *     "Type": "A",
+ *     "TypeName": "其他入库",
+ *     "Status": "22",
+ *     "DeliveryNoteCode": "",
+ *     "OutStoreNumber": "",
+ *     "BLMaker": "admin     ",
+ *     "Handler": "admin     ",
+ *     "Auditor": "admin     ",
+ *     "BLDate": "2018-10-23T14:54:53.08",
+ *     "AuditorDate": "2018-10-23T15:00:59.927",
+ *     "FactArrivalDate": "2018-10-23T14:54:53.08",
+ *     "AuditDescription": "",
+ *     "Remark": "",
+ *     "CustomCategory": "9200000000",
+ *     "CustomCategoryName": "耗材科财务分类",
+ *     "CreateTime": "2018-10-23T14:55:52.207",
+ *     "UpdateTime": "2018-10-23T15:00:59.927",
+ *     "Moneys": 6.2,
+ *     "PrintTimes": 1,
+ *     "WarehouseType": "0",
+ *     "WarehouseDate": "2018-10-23",
+ *     "DepartmentName": "供应科",
+ *     "SupplierName": "广州市荔湾区明兴玻璃工艺店",
+ *     "BLMakerName": "管理员",
+ *     "AuditorName": "管理员",
+ *     "NoFreeMoneys": 0,
+ *     "TotalAmount": 0
+ */
 public class MWareHouseBean extends BaseModel {
     private List<WarehouseDetailList> warehouseDetailList;
 

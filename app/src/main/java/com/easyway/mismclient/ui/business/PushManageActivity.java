@@ -1,11 +1,16 @@
 package com.easyway.mismclient.ui.business;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 
 import com.easyway.mismclient.R;
 import com.easyway.mismclient.base.BaseActivity;
 import com.easyway.mismclient.model.MWareHouseBean;
+import com.easyway.mismclient.ui.adapter.LsvPushManageBottomAdapter;
+import com.easyway.mismclient.ui.info.PhotoActivity;
 import com.easyway.mismclient.utils.UToast;
+import com.easyway.mismclient.utils.Uintent;
 import com.easyway.mismclient.utils.Ulog;
 import com.easyway.mismclient.utils.http.HttpAdapter;
 import com.easyway.mismclient.utils.http.OnResponseListener;
@@ -33,20 +38,32 @@ public class PushManageActivity extends BaseActivity {
     @BindView(R.id.ac_push_manage_lsv)
     ListViewForScrollView mLsv;
 
+    private LsvPushManageBottomAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_push_manage);
         ButterKnife.bind(this);
-        netWork( "QTRK201810230003");
+
+        adapter = new LsvPushManageBottomAdapter(this, null);
+        mLsv.setAdapter(adapter);
+
         mEditMain.setListener(new BarCodeCallBackListener() {
             @Override
             public void barCodeType(int barCodeType) {
-//                netWork(mEditMain.getText());
+                netWork(mEditMain.getText());
             }
 
             @Override
             public void doClose() {
+            }
+        });
+
+        mLsv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Uintent.intentDIY(mActivity, PhotoActivity.class);
             }
         });
     }
@@ -61,6 +78,7 @@ public class PushManageActivity extends BaseActivity {
                 .enqueue(new OnResponseListener<MWareHouseBean>(this) {
                     @Override
                     public void onSuccess(MWareHouseBean bean) {
+                        adapter.updateList(bean.getWarehouseDetailList());
                         mEditZhiDanDate.setText(bean.getAuditorDate());
                         Ulog.i("MWareHouse", "onSuccess");
 
@@ -73,5 +91,7 @@ public class PushManageActivity extends BaseActivity {
                     }
                 });
     }
+
+
 
 }
