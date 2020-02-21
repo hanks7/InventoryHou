@@ -80,7 +80,13 @@
         <activity android:name=".SelectTypeLoginActivity" />
         <!-- 手术登记 -->
         <activity android:name=".ui.business.OperationRegisterActivity" />
-        <activity android:name=".ui.business.PushManageActivity"></activity>
+        <activity android:name=".ui.business.PushManageActivity" />
+        <activity android:name=".ui.business.UploadImageActivity" />
+
+        <activity
+            android:name=".utils.photoview.ImagePagerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.easyway.mismclient.R;
 import com.easyway.mismclient.base.BaseMyAdapter;
@@ -11,6 +12,7 @@ import com.easyway.mismclient.model.WarehouseDetailList;
 
 import java.util.List;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
@@ -41,12 +43,20 @@ public class LsvPushManageBottomAdapter extends BaseMyAdapter<WarehouseDetailLis
 
     public static class ViewHolder {
 
-
+        @BindView(R.id.item_lsv_push_manage_tv1)
+        TextView vhTv1;
+        @BindView(R.id.item_lsv_push_manage_tv2)
+        TextView vhTv2;
+        @BindView(R.id.item_lsv_push_manage_tv3)
+        TextView vhTv3;
         ViewHolder(View view) {
             ButterKnife.bind(this, view);
         }
 
         public void fillValue(final int position, WarehouseDetailList bean ) {
+            vhTv1.setText(bean.getProductName()+"");
+            vhTv2.setText(bean.getSupplierName()+"");
+            vhTv3.setText(bean.getAmount()+"");
 
 
         }

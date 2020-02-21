@@ -4,8 +4,7 @@
     android:id="@+id/ac_main_btn_confirm"
     android:layout_width="100dp"
     android:layout_height="100dp"
-    android:layout_gravity="center"
-    >
+    android:layout_gravity="center">
 
     <FrameLayout
         android:layout_width="100dp"
@@ -17,15 +16,9 @@
             android:layout_height="80dp"
             android:layout_gravity="left|bottom"
             android:scaleType="centerCrop"
-            android:src="@mipmap/ic_add_photo" />
+            android:src="@mipmap/icon_addpic_focused" />
 
-        <ImageView
-            android:id="@+id/gv_iv_clear"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:layout_gravity="right|top"
-            android:padding="12dp"
-            android:src="@mipmap/shanchu" />
+
     </FrameLayout>
 
 

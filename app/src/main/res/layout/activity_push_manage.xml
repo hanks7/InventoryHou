@@ -54,6 +54,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:input_title="入库库房:" />
+            <!--<com.easyway.mismclient.view.MyTextView-->
+                <!--android:id="@+id/ac_push_manage_edt_1"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--app:input_title="规格型号:" />-->
+            <!--<com.easyway.mismclient.view.MyTextView-->
+                <!--android:id="@+id/ac_push_manage_edt_2"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--app:input_title="批号序列号:" />-->
 
             <View
                 style="@style/dividing_line"

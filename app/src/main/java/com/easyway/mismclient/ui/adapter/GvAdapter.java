@@ -61,7 +61,7 @@ public class GvAdapter extends BaseMyAdapter {
         if (convertView != null) {
             viewHolder = (GvViewHolder) convertView.getTag();
         } else {
-            convertView = LayoutInflater.from(mContext).inflate(R.layout.item_gv, null);
+            convertView = LayoutInflater.from(mContext).inflate(R.layout.item_gv3, null);
             viewHolder = new GvViewHolder(convertView);
             convertView.setTag(viewHolder);
         }

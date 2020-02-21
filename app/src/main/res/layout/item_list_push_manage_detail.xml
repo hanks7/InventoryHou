@@ -1,12 +1,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/button2"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_alignParentStart="true"
     android:layout_centerVertical="true"
     android:background="@color/white"
     android:gravity="center|left"
+    android:paddingLeft="12dp"
+    android:paddingRight="12dp"
+    android:paddingTop="6dp"
+    android:paddingBottom="6dp"
     android:orientation="vertical">
 
     <LinearLayout
@@ -18,10 +21,13 @@
 
         <TextView
             style="@style/TextView_16_wrap"
-            android:text="包装单位 : " />
+            android:textSize="13sp"
+            android:text="产品名称 : " />
 
         <TextView
+            android:id="@+id/item_lsv_push_manage_tv1"
             style="@style/TextView_16_wrap"
+            android:textSize="13sp"
             android:textColor="@color/input_color"
             tools:text="上海怡道有限公司" />
     </LinearLayout>
@@ -35,10 +41,13 @@
 
         <TextView
             style="@style/TextView_16_wrap"
-            android:text="包装单位 : " />
+            android:textSize="13sp"
+            android:text="供应商 : " />
 
         <TextView
+            android:id="@+id/item_lsv_push_manage_tv2"
             style="@style/TextView_16_wrap"
+            android:textSize="13sp"
             android:textColor="@color/input_color"
             tools:text="上海怡道有限公司" />
     </LinearLayout>
@@ -52,13 +61,15 @@
 
         <TextView
             style="@style/TextView_16_wrap"
-            android:text="包装单位 : " />
+            android:textSize="13sp"
+            android:text="数量 : " />
 
         <TextView
-            android:id="@+id/item_list_inventory_tv_supplier"
+            android:id="@+id/item_lsv_push_manage_tv3"
             style="@style/TextView_16_wrap"
+            android:textSize="13sp"
             android:textColor="@color/input_color"
-            tools:text="上海怡道有限公司" />
+            tools:text="3" />
     </LinearLayout>
 
 
