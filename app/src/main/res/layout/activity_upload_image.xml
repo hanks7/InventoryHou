@@ -7,14 +7,14 @@
     tools:context=".ui.business.UploadImageActivity">
 
     <com.easyway.mismclient.view.TopBar
-        android:id="@+id/topbar"
+        android:id="@+id/ac_upload_img_topbar"
         style="@style/TopBar"
         app:title="入库上传" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/topbar">
+        android:layout_below="@+id/ac_upload_img_topbar">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -34,11 +34,12 @@
 
 
                 <TextView
-                    style="@style/ac_repair_detail_tv_title_style"
+                    style="@style/detail_tv_title_style"
                     android:text="产品名称：" />
 
                 <TextView
-                    style="@style/ac_repair_detail_tv_content_style"
+                    android:id="@+id/ac_upload_img_tv_product_name"
+                    style="@style/detail_tv_content_style"
                     android:text=" 111" />
 
 
@@ -55,11 +56,12 @@
 
 
                 <TextView
-                    style="@style/ac_repair_detail_tv_title_style"
+                    style="@style/detail_tv_title_style"
                     android:text="规格型号：" />
 
                 <TextView
-                    style="@style/ac_repair_detail_tv_content_style"
+                    android:id="@+id/ac_upload_img_tv_spec_model"
+                    style="@style/detail_tv_content_style"
                     android:text="内容" />
 
 
@@ -76,11 +78,12 @@
 
 
                 <TextView
-                    style="@style/ac_repair_detail_tv_title_style"
+                    style="@style/detail_tv_title_style"
                     android:text="批号序列号：" />
 
                 <TextView
-                    style="@style/ac_repair_detail_tv_content_style"
+                    android:id="@+id/ac_upload_img_tv_pb_sn"
+                    style="@style/detail_tv_content_style"
                     android:text="内容" />
 
 
@@ -97,11 +100,12 @@
 
 
                 <TextView
-                    style="@style/ac_repair_detail_tv_title_style"
+                    style="@style/detail_tv_title_style"
                     android:text="数量：" />
 
                 <TextView
-                    style="@style/ac_repair_detail_tv_content_style"
+                    android:id="@+id/ac_upload_img_tv_Amount"
+                    style="@style/detail_tv_content_style"
                     android:text="内容" />
 
 
@@ -116,12 +120,12 @@
 
 
                 <TextView
-                    style="@style/ac_repair_detail_tv_title_style"
+                    style="@style/detail_tv_title_style"
                     android:text="关联的文件名称：" />
 
                 <TextView
-                    android:id="@+id/ac_detail_repair_tv_phone"
-                    style="@style/ac_repair_detail_tv_content_style"
+                    android:id="@+id/ac_upload_img_tv_doc_name"
+                    style="@style/detail_tv_content_style"
                     android:text="18670801569" />
 
 
@@ -138,7 +142,7 @@
                 android:textSize="11sp" />
 
             <com.easyway.mismclient.view.GridViewForScrollView
-                android:id="@+id/ac_detail_repair_gv_photo"
+                android:id="@+id/ac_upload_img_gv_photo"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:clipToPadding="false"

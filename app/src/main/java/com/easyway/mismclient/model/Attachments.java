@@ -1,7 +1,6 @@
 package com.easyway.mismclient.model;
 
-public class Attachments
-{
+public class Attachments {
     private int AttachmenID;
 
     private String InfoId;
@@ -26,76 +25,99 @@ public class Attachments
 
     private String IsVoid;
 
-    public void setAttachmenID(int AttachmenID){
+    public void setAttachmenID(int AttachmenID) {
         this.AttachmenID = AttachmenID;
     }
-    public int getAttachmenID(){
+
+    public int getAttachmenID() {
         return this.AttachmenID;
     }
-    public void setInfoId(String InfoId){
+
+    public void setInfoId(String InfoId) {
         this.InfoId = InfoId;
     }
-    public String getInfoId(){
+
+    public String getInfoId() {
         return this.InfoId;
     }
-    public void setType(String Type){
+
+    public void setType(String Type) {
         this.Type = Type;
     }
-    public String getType(){
+
+    public String getType() {
         return this.Type;
     }
-    public void setFileName(String FileName){
+
+    public void setFileName(String FileName) {
         this.FileName = FileName;
     }
-    public String getFileName(){
+
+    public String getFileName() {
         return this.FileName;
     }
-    public void setFilePath(String FilePath){
+
+    public void setFilePath(String FilePath) {
         this.FilePath = FilePath;
     }
-    public String getFilePath(){
+
+    public String getFilePath() {
         return this.FilePath;
     }
-    public void setSuffixName(String SuffixName){
+
+    public void setSuffixName(String SuffixName) {
         this.SuffixName = SuffixName;
     }
-    public String getSuffixName(){
+
+    public String getSuffixName() {
         return this.SuffixName;
     }
-    public void setFileSize(int FileSize){
+
+    public void setFileSize(int FileSize) {
         this.FileSize = FileSize;
     }
-    public int getFileSize(){
+
+    public int getFileSize() {
         return this.FileSize;
     }
-    public void setSequence(String Sequence){
+
+    public void setSequence(String Sequence) {
         this.Sequence = Sequence;
     }
-    public String getSequence(){
+
+    public String getSequence() {
         return this.Sequence;
     }
-    public void setShowName(String ShowName){
+
+    public void setShowName(String ShowName) {
         this.ShowName = ShowName;
     }
-    public String getShowName(){
+
+    public String getShowName() {
         return this.ShowName;
     }
-    public void setCreateTime(String CreateTime){
+
+    public void setCreateTime(String CreateTime) {
         this.CreateTime = CreateTime;
     }
-    public String getCreateTime(){
+
+    public String getCreateTime() {
         return this.CreateTime;
     }
-    public void setCreateUser(String CreateUser){
+
+    public void setCreateUser(String CreateUser) {
         this.CreateUser = CreateUser;
     }
-    public String getCreateUser(){
+
+    public String getCreateUser() {
         return this.CreateUser;
     }
-    public void setIsVoid(String IsVoid){
+
+    public void setIsVoid(String IsVoid) {
         this.IsVoid = IsVoid;
     }
-    public String getIsVoid(){
+
+    public String getIsVoid() {
         return this.IsVoid;
     }
 }

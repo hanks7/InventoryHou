@@ -1,5 +1,6 @@
 package com.easyway.mismclient.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -51,7 +52,7 @@ import java.util.List;
  *             "OutDetailID": 0,
  *             "Attachments": []
  */
-public class WarehouseDetailList {
+public class WarehouseDetailList implements Serializable {
     private int DetailID;
 
     private String InStoreNo;

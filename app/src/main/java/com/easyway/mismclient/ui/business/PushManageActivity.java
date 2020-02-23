@@ -73,7 +73,9 @@ public class PushManageActivity extends BaseActivity {
         mLsv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Uintent.intentDIY(mActivity, UploadImageActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("user",adapter.getItem(i));
+                Uintent.intentDIY(mActivity, UploadImageActivity.class,bundle);
             }
         });
     }
