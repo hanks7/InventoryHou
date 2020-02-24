@@ -23,6 +23,9 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * 入库管理
+ */
 public class PushManageActivity extends BaseActivity {
 
     @BindView(R.id.ac_push_manage_topbar)
@@ -36,11 +39,6 @@ public class PushManageActivity extends BaseActivity {
     MyTextView mEdtGongYingShang;
     @BindView(R.id.ac_push_manage_edt_ru_ku_ku_fang)
     MyTextView mEdtRuKuKuFang;
-
-//    @BindView(R.id.ac_push_manage_edt_1)
-//    MyTextView mEdt1;
-//    @BindView(R.id.ac_push_manage_edt_2)
-//    MyTextView mEdt2;
 
     @BindView(R.id.ac_push_manage_lsv)
     ListViewForScrollView mLsv;

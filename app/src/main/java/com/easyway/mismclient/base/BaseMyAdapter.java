@@ -12,12 +12,12 @@ import java.util.List;
 /**
  * adapter
  */
-public class BaseMyAdapter<Data> extends BaseAdapter {
+public class BaseMyAdapter<T> extends BaseAdapter {
 
     public Context mContext;
-    public List<Data> list;
+    public List<T> list;
 
-    public BaseMyAdapter(Context mContext, List<Data> list) {
+    public BaseMyAdapter(Context mContext, List<T> list) {
         this.mContext = mContext;
         if (list != null) {
             this.list = list;
@@ -25,7 +25,7 @@ public class BaseMyAdapter<Data> extends BaseAdapter {
             this.list = new ArrayList();
         }
     }
-    public void addAllData(List<Data> listBean) {
+    public void addAllData(List<T> listBean) {
         if (listBean == null) return;
         list.addAll(listBean);
         notifyDataSetChanged();
@@ -35,7 +35,7 @@ public class BaseMyAdapter<Data> extends BaseAdapter {
      *
      * @param listBean
      */
-    public void updateList(List<Data> listBean) {
+    public void updateList(List<T> listBean) {
         if (listBean == null) return;
         list.clear();
         list.remove(list);
@@ -43,7 +43,7 @@ public class BaseMyAdapter<Data> extends BaseAdapter {
         notifyDataSetChanged();
     }
 
-    public List getList() {
+    public List<T> getList() {
         return list;
     }
 
@@ -54,7 +54,7 @@ public class BaseMyAdapter<Data> extends BaseAdapter {
 
 
     @Override
-    public Data getItem(int position) {
+    public T getItem(int position) {
         return list.get(position);
     }
 

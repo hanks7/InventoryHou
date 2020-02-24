@@ -151,4 +151,13 @@
 
         </LinearLayout>
     </ScrollView>
+
+    <Button
+        android:onClick="btnClickUpload"
+        style="@style/style_button"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="42dp"
+        android:layout_marginBottom="22dp"
+        android:text="登  录" />
 </RelativeLayout>
