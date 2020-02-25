@@ -15,13 +15,14 @@ import com.bumptech.glide.Glide;
 import com.easyway.mismclient.R;
 import com.easyway.mismclient.base.BaseActivity;
 import com.easyway.mismclient.base.BaseModel;
-import com.easyway.mismclient.model.Test2Bean;
+import com.easyway.mismclient.model.UploadImageBean;
 import com.easyway.mismclient.model.WarehouseDetailList;
-import com.easyway.mismclient.ui.adapter.Gv2Adapter;
+import com.easyway.mismclient.ui.adapter.GvUploadImageAdapter;
 import com.easyway.mismclient.ui.adapter.GvNormalAdapter;
 import com.easyway.mismclient.utils.ShowPhotoView;
 import com.easyway.mismclient.utils.UToast;
 import com.easyway.mismclient.utils.Ulog;
+import com.easyway.mismclient.utils.UploadHelper;
 import com.easyway.mismclient.utils.http.HttpAdapter;
 import com.easyway.mismclient.utils.http.OnResponseListener;
 import com.easyway.mismclient.utils.permission.PermissionReq;
@@ -35,14 +36,13 @@ import com.jaiky.imagespickers.ImageSelectorActivity;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import okhttp3.MediaType;
-import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 
-import static com.easyway.mismclient.utils.http.HttpAdapter.getRequestBody;
+import static com.easyway.mismclient.base.BaseOFFLineApplication.APP;
 
 /**
  * 图片上传界面
@@ -80,7 +80,7 @@ public class UploadImageActivity extends BaseActivity {
     private GvNormalAdapter adapter;
 
     int position;
-    Gv2Adapter adapter2;
+    GvUploadImageAdapter gvUploadImageAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,21 +89,33 @@ public class UploadImageActivity extends BaseActivity {
         ButterKnife.bind(this);
         initView(getIntentData());
 
-        final ArrayList<String> list = getTestStrings();
 
         init();
 //        init2(mList);
     }
 
     public void btnClickUpload(View view) {
-        test1();
+        if (gvUploadImageAdapter.getList() == null || gvUploadImageAdapter.getList().isEmpty()) {
+            UToast.showText("请添加照片");
+            return;
+        }
+        netWorkUpload2();
     }
 
-    private void test1() {
-        HttpAdapter.getService().upload(
-                getRequestBody("{\"InfoId\":2141, CreateUser:\"000000demo\"}"),
-                filesToMultipartBodyParts()
-        ).enqueue(new OnResponseListener<BaseModel>(this) {
+
+    private void netWorkUpload2() {
+
+        UploadHelper helper = UploadHelper.getInstance();
+        for (UploadImageBean bean : gvUploadImageAdapter.getList()) {
+            Ulog.i("netWorkUpload2", bean.getPath());
+            File file = new File(bean.getPath());
+            helper.addParameter("file", file);
+        }
+
+        Map<String, RequestBody> params = helper.addParameter("param", "{\"InfoId\":" + mBean.getProductInfoID() + ", CreateUser:\"" + APP.userModel.getEmployeeName() + "\"}").builder();
+
+
+        HttpAdapter.getService().uploadFilesFeedback(params).enqueue(new OnResponseListener<BaseModel>(this) {
             @Override
             public void onSuccess(BaseModel baseModel) {
                 UToast.showText("upLoadImg-onSuccess");
@@ -111,15 +123,6 @@ public class UploadImageActivity extends BaseActivity {
         });
     }
 
-    public List<MultipartBody.Part> filesToMultipartBodyParts() {
-        List<MultipartBody.Part> parts = new ArrayList<>();
-        for (File file : mFileList) {
-            RequestBody requestBody = RequestBody.create(MediaType.parse("multipart/form-data"), file);
-            MultipartBody.Part part = MultipartBody.Part.createFormData("file", file.getName(), requestBody);
-            parts.add(part);
-        }
-        return parts;
-    }
 
     private void init2(final ArrayList<String> list) {
         adapter = new GvNormalAdapter(this, list);
@@ -165,39 +168,44 @@ public class UploadImageActivity extends BaseActivity {
     }
 
     /**
+     * 上一个页面传来的对象
+     */
+    WarehouseDetailList mBean;
+
+    /**
      * 从intent中获取bundle
      *
      * @return
      */
     private WarehouseDetailList getIntentData() {
-        return (WarehouseDetailList) getIntent().getExtras().get("user");
+        mBean = (WarehouseDetailList) getIntent().getExtras().get("user");
+        return mBean;
     }
 
 
     private void init() {
-        adapter2 = new Gv2Adapter(this, null);
-        mGvPhoto.setAdapter(adapter2);
+        gvUploadImageAdapter = new GvUploadImageAdapter(this, null);
+        mGvPhoto.setAdapter(gvUploadImageAdapter);
         mGvPhoto.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                boolean isLast = adapter2.getList().size() == i;
-                if (isLast && adapter2.getList().size() >= 9) {
+                boolean isLast = gvUploadImageAdapter.getList().size() == i;
+                if (isLast && gvUploadImageAdapter.getList().size() >= 9) {
                     UToast.showText("最多添加9张图片");
                     return;
                 }
                 if (isLast) {//判断是否点击最后一个“添加”按钮
                     position = i;
-                    toPhoto(9 - adapter2.getList().size());
+                    toPhoto(9 - gvUploadImageAdapter.getList().size());
                     return;
                 } else {
-                    ShowPhotoView.imageBrower(mActivity, adapter2.getList().get(i).getPath());
+                    ShowPhotoView.imageBrower(mActivity, gvUploadImageAdapter.getList().get(i).getPath());
                 }
             }
         });
     }
 
-    List<Test2Bean> mList;
-    List<File> mFileList;
+    List<UploadImageBean> mList;
 
     /**
      * 处理选择图片之后返回主界面
@@ -207,15 +215,12 @@ public class UploadImageActivity extends BaseActivity {
     private void dealReasultFromSelectPic(Intent intent) {
         List<String> pathList = intent.getStringArrayListExtra(ImageSelectorActivity.EXTRA_RESULT);
         mList = new ArrayList<>();
-        mFileList = new ArrayList<>();
         for (final String path : pathList) {
-            File file = new File(path);
-            mFileList.add(file);
             Ulog.i("path", path);
-            mList.add(new Test2Bean(path, ""));
+            mList.add(new UploadImageBean(path, ""));
         }
 
-        adapter2.addAllData(mList);
+        gvUploadImageAdapter.addAllData(mList);
     }
 
 

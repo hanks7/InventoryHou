@@ -13,6 +13,7 @@ import com.easyway.mismclient.model.UpdateBean;
 import com.easyway.mismclient.model.UserBean;
 
 import java.util.List;
+import java.util.Map;
 
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
@@ -23,6 +24,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
+import retrofit2.http.PartMap;
 import retrofit2.http.Query;
 
 /**
@@ -262,7 +264,7 @@ public interface HttpApis {
                            @Part("file") List<MultipartBody.Part> parts);
 
     @Multipart
-    @POST("users/image")
-    Call<BaseModel> uploadFilesWithParts(@Part() List<MultipartBody.Part> parts);
+    @POST("/MWareHouse")
+    Call<BaseModel> uploadFilesFeedback(@PartMap Map<String, RequestBody> params);
 
 }
