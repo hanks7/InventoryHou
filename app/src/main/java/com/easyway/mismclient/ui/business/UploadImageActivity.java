@@ -19,6 +19,7 @@ import com.easyway.mismclient.model.UploadImageBean;
 import com.easyway.mismclient.model.WarehouseDetailList;
 import com.easyway.mismclient.ui.adapter.GvUploadImageAdapter;
 import com.easyway.mismclient.ui.adapter.GvNormalAdapter;
+import com.easyway.mismclient.utils.Base64Img;
 import com.easyway.mismclient.utils.ShowPhotoView;
 import com.easyway.mismclient.utils.UToast;
 import com.easyway.mismclient.utils.Ulog;
@@ -106,13 +107,17 @@ public class UploadImageActivity extends BaseActivity {
     private void netWorkUpload2() {
 
         UploadHelper helper = UploadHelper.getInstance();
-        for (UploadImageBean bean : gvUploadImageAdapter.getList()) {
-            Ulog.i("netWorkUpload2", bean.getPath());
+        for (int i = 0; i < gvUploadImageAdapter.getList().size(); i++) {
+            UploadImageBean bean = gvUploadImageAdapter.getList().get(i);
             File file = new File(bean.getPath());
-            helper.addParameter("file", file);
+            Ulog.i("netWorkUpload2", bean.getPath());
+            Ulog.i("netWorkUpload2-file", "file"+i);
+            helper.addParameter("file"+i, Base64Img.imageToBase64(bean.getPath()));
+//            helper.addParameter("file"+i,"file"+i);
         }
 
-        Map<String, RequestBody> params = helper.addParameter("param", "{\"InfoId\":" + mBean.getProductInfoID() + ", CreateUser:\"" + APP.userModel.getEmployeeName() + "\"}").builder();
+
+        Map<String, RequestBody> params = helper.addParameter("param", "{\"InfoId\":" + mBean.getDetailID() + ", CreateUser:\"" + APP.userModel.getEmployeeName() + "\"}").builder();
 
 
         HttpAdapter.getService().uploadFilesFeedback(params).enqueue(new OnResponseListener<BaseModel>(this) {

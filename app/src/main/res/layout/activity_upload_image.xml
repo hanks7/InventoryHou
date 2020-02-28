@@ -138,7 +138,7 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="12dp"
                 android:paddingBottom="12dp"
-                android:text="产品故障图片 "
+                android:text="产品关联文件: "
                 android:textSize="11sp" />
 
             <com.easyway.mismclient.view.GridViewForScrollView

@@ -248,23 +248,23 @@ public interface HttpApis {
      * @return
      */
     @Multipart
-    @POST("/MWareHouse")
+    @POST("/api/MWareHouse")
     Call<BaseModel> upLoadImg(
             @Part("description") RequestBody body,
             @Part() List<MultipartBody.Part> parts
     );
 
     @Multipart
-    @POST("/MWareHouse")
+    @POST("/api/MWareHouse")
     Call<BaseModel> upload(@Part("description") RequestBody description,
                            @Part  MultipartBody.Part part);
     @Multipart
-    @POST("/MWareHouse")
+    @POST("/api/MWareHouse")
     Call<BaseModel> upload(@Part("description") RequestBody description,
                            @Part("file") List<MultipartBody.Part> parts);
 
     @Multipart
-    @POST("/MWareHouse")
+    @POST("/api/MWareHouse")
     Call<BaseModel> uploadFilesFeedback(@PartMap Map<String, RequestBody> params);
 
 }
